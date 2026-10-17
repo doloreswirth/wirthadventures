@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wirth Adventures</title>
+<meta name="description" content="The Wirth family's trips, trails, and stories.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Public+Sans:wght@400;600&display=swap">
+<style>
+  :root {
+    --bg: #F4EFE6;
+    --ink: #1E2A2A;
+    --muted: #5A6663;
+    --accent: #C4572A;
+    --ridge1: #2F4A47;
+    --ridge2: #4E6E68;
+    --ridge3: #8FA89F;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141B1B;
+      --ink: #EDE6DA;
+      --muted: #A9B3AE;
+      --accent: #E07A4C;
+      --ridge1: #0B1212;
+      --ridge2: #22332F;
+      --ridge3: #3C5550;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Public Sans", system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 64px 24px 24px;
+    max-width: 760px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 800;
+    font-size: clamp(44px, 10vw, 88px);
+    line-height: .95;
+    letter-spacing: -.02em;
+  }
+  p.lede {
+    margin-top: 20px;
+    font-size: clamp(17px, 2.4vw, 20px);
+    line-height: 1.5;
+    color: var(--muted);
+    max-width: 34ch;
+  }
+  .soon {
+    margin-top: 32px;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 15px;
+    border-top: 2px solid var(--accent);
+    padding-top: 10px;
+  }
+  svg.ridges { display: block; width: 100%; height: auto; }
+  footer {
+    background: var(--ridge1);
+    color: #DCE3DF;
+    font-size: 13px;
+    text-align: center;
+    padding: 16px 24px 20px;
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Wirth family</div>
+  <h1>Wirth<br>Adventures</h1>
+  <p class="lede">Trips, trails, and stories from our family on the move.</p>
+  <span class="soon">Coming soon · Muy pronto</span>
+</main>
+<svg class="ridges" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
+  <path fill="var(--ridge3)" d="M0 150 L120 90 L210 130 L330 50 L440 120 L560 70 L680 135 L800 60 L930 125 L1050 80 L1200 140 L1200 220 L0 220Z"/>
+  <path fill="var(--ridge2)" d="M0 180 L140 120 L260 165 L390 100 L520 160 L640 115 L770 170 L900 110 L1030 165 L1200 120 L1200 220 L0 220Z"/>
+  <path fill="var(--ridge1)" d="M0 220 L0 200 L160 160 L300 195 L450 150 L600 200 L760 160 L900 200 L1060 165 L1200 195 L1200 220Z"/>
+</svg>
+<footer>© <span id="y"></span> Wirth Adventures</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
