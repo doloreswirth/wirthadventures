@@ -3,104 +3,240 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wirth Adventures</title>
-<meta name="description" content="The Wirth family's trips, trails, and stories.">
+<title>W Trek Training · Wirth Adventures</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Public+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&amp;family=Barlow:wght@400;500;600&amp;display=swap">
 <style>
-  :root {
-    --bg: #F4EFE6;
-    --ink: #1E2A2A;
-    --muted: #5A6663;
-    --accent: #C4572A;
-    --ridge1: #2F4A47;
-    --ridge2: #4E6E68;
-    --ridge3: #8FA89F;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #141B1B;
-      --ink: #EDE6DA;
-      --muted: #A9B3AE;
-      --accent: #E07A4C;
-      --ridge1: #0B1212;
-      --ridge2: #22332F;
-      --ridge3: #3C5550;
-    }
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { height: 100%; }
-  body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: "Public Sans", system-ui, sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 64px 24px 24px;
-    max-width: 760px;
-    margin: 0 auto;
-    width: 100%;
-  }
-  .eyebrow {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 16px;
-  }
-  h1 {
-    font-family: "Fraunces", Georgia, serif;
-    font-weight: 800;
-    font-size: clamp(44px, 10vw, 88px);
-    line-height: .95;
-    letter-spacing: -.02em;
-  }
-  p.lede {
-    margin-top: 20px;
-    font-size: clamp(17px, 2.4vw, 20px);
-    line-height: 1.5;
-    color: var(--muted);
-    max-width: 34ch;
-  }
-  .soon {
-    margin-top: 32px;
-    display: inline-block;
-    font-weight: 600;
-    font-size: 15px;
-    border-top: 2px solid var(--accent);
-    padding-top: 10px;
-  }
-  svg.ridges { display: block; width: 100%; height: auto; }
-  footer {
-    background: var(--ridge1);
-    color: #DCE3DF;
-    font-size: 13px;
-    text-align: center;
-    padding: 16px 24px 20px;
-  }
+*{box-sizing:border-box}
+body{margin:0;background:#F3F5F4;color:#17232B;font-family:'Barlow',sans-serif}
+a{color:#1F5C73}a:hover{color:#123B4A}
+header.site{position:sticky;top:0;z-index:5;background:#17232B;color:#fff;display:flex;align-items:center;gap:20px;padding:10px 24px;flex-wrap:wrap}
+header.site .brand{color:#fff;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.04em;white-space:nowrap}
+header.site nav{display:flex;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+header.site nav a{color:#C9D3D6;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:16px;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:4px;white-space:nowrap}
+header.site nav a:hover{color:#fff;background:#24343E}
+header.site nav a[aria-current]{color:#17232B;background:#F3F5F4}
+.frame{max-width:1200px;margin:0 auto;padding:48px 64px 40px}
+.pager{max-width:1200px;margin:0 auto;padding:0 64px 48px;display:flex;justify-content:space-between;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:22px}
+.pager a{text-decoration:none}
+footer.site{background:#17232B;color:#C9D3D6;text-align:center;font-size:13px;padding:16px}
+.scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.scroll-x > div{min-width:1060px}
+@media (max-width:900px){
+  .frame{padding:28px 16px 24px !important}
+  .pager{padding:0 16px 32px}
+  .frame h1{font-size:60px !important}
+  .frame > div:first-child{flex-direction:column !important;align-items:flex-start !important}
+  .frame > div:first-child > div:last-child{align-items:flex-start !important;text-align:left !important}
+  .week-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+  .three-col{grid-template-columns:1fr !important}
+  .day{grid-template-columns:1fr !important}
+  .day > div:first-child{flex-direction:row !important;align-items:baseline;gap:10px !important}
+  .day > div:first-child > div:last-child{margin-top:0 !important;padding-top:0 !important;margin-left:auto}
+}
 </style>
 </head>
 <body>
-<main>
-  <div class="eyebrow">Wirth family</div>
-  <h1>Wirth<br>Adventures</h1>
-  <p class="lede">Trips, trails, and stories from our family on the move.</p>
-  <span class="soon">Coming soon · Muy pronto</span>
-</main>
-<svg class="ridges" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
-  <path fill="var(--ridge3)" d="M0 150 L120 90 L210 130 L330 50 L440 120 L560 70 L680 135 L800 60 L930 125 L1050 80 L1200 140 L1200 220 L0 220Z"/>
-  <path fill="var(--ridge2)" d="M0 180 L140 120 L260 165 L390 100 L520 160 L640 115 L770 170 L900 110 L1030 165 L1200 120 L1200 220 L0 220Z"/>
-  <path fill="var(--ridge1)" d="M0 220 L0 200 L160 160 L300 195 L450 150 L600 200 L760 160 L900 200 L1060 165 L1200 195 L1200 220Z"/>
-</svg>
-<footer>© <span id="y"></span> Wirth Adventures</footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<header class="site"><a class="brand" href="./">Wirth Adventures</a><nav><a href="./" aria-current="page">Overview</a><a href="week1.html">Week 1</a><a href="week2.html">Week 2</a><a href="week3.html">Week 3</a><a href="week4.html">Week 4</a><a href="week5.html">Week 5</a><a href="week6.html">Week 6</a><a href="week7.html">Week 7</a><a href="week8.html">Week 8</a></nav></header>
+<div class="frame" style="box-sizing: border-box; background: #F3F5F4; color: #17232B; font-family: 'Barlow', sans-serif; font-size: 17px; line-height: 1.4; display: flex; flex-direction: column; gap: 40px">
+
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; border-bottom: 3px solid #17232B; padding-bottom: 24px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 20px; letter-spacing: 0.14em; text-transform: uppercase; color: #1F5C73">Torres del Paine · Dec 30 – Jan 3</div>
+<h1 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 84px; line-height: 0.95; letter-spacing: -0.01em">W Trek Training</h1>
+</div>
+<div style="text-align: right; display: flex; flex-direction: column; gap: 4px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 32px">Oct 19 – Dec 12</div>
+<div style="font-size: 16px; color: #45535C">8 weeks · trains with the Deuter 28</div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 30px; text-transform: uppercase; letter-spacing: 0.06em">Every week</h2>
+<div class="week-grid" style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 10px">
+
+<div style="background: #FFFFFF; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column">
+<div style="background: #8A9499; color: #FFFFFF; padding: 10px 14px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.08em">MON</div>
+<div style="padding: 14px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-weight: 600; font-size: 19px">Rest</div>
+<div style="font-size: 15px; color: #45535C">Full day off. Walk if you like.</div>
+</div>
+</div>
+
+<div style="background: #FFFFFF; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column">
+<div style="background: #4E6B5C; color: #FFFFFF; padding: 10px 14px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.08em">TUE</div>
+<div style="padding: 14px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-weight: 600; font-size: 19px">Tennis</div>
+<div style="font-size: 15px; color: #45535C">Evening</div>
+</div>
+</div>
+
+<div style="background: #FFFFFF; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column">
+<div style="background: #1F5C73; color: #FFFFFF; padding: 10px 14px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.08em">WED</div>
+<div style="padding: 14px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-weight: 600; font-size: 19px">Weights</div>
+<div style="font-size: 15px; color: #45535C">7 a.m. · 45 min<br>Legs, core, back</div>
+</div>
+</div>
+
+<div style="background: #FFFFFF; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column">
+<div style="background: #8A9499; color: #FFFFFF; padding: 10px 14px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.08em">THU</div>
+<div style="padding: 14px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-weight: 600; font-size: 19px">Yoga</div>
+<div style="font-size: 15px; color: #45535C">7 p.m. · gentle, restorative</div>
+</div>
+</div>
+
+<div style="background: #FFFFFF; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column">
+<div style="background: #1F5C73; color: #FFFFFF; padding: 10px 14px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.08em">FRI</div>
+<div style="padding: 14px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-weight: 600; font-size: 19px">Easy day</div>
+<div style="font-size: 15px; color: #45535C">15 min home strength + 45 min easy hike: Red Rock Canyon or Peters Canyon</div>
+<div style="font-size: 14px; font-weight: 600; color: #8A3F12">Lesson Fridays: lesson only</div>
+</div>
+</div>
+
+<div style="background: #FFFFFF; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column">
+<div style="background: #B5541C; color: #FFFFFF; padding: 10px 14px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.08em">SAT</div>
+<div style="padding: 14px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-weight: 600; font-size: 19px">Main hike</div>
+<div style="font-size: 15px; color: #45535C">Sunrise start · loaded pack · one long descent</div>
+</div>
+</div>
+
+<div style="background: #FFFFFF; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column">
+<div style="background: #B5541C; color: #FFFFFF; padding: 10px 14px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.08em">SUN</div>
+<div style="padding: 14px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-weight: 600; font-size: 19px">Second hike</div>
+<div style="font-size: 15px; color: #45535C">Shorter, on tired legs · lighter pack</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 30px; text-transform: uppercase; letter-spacing: 0.06em">Weekend hikes</h2>
+<div class="scroll-x" style="background: #FFFFFF; border-radius: 6px;"><div style="display: flex; flex-direction: column">
+
+<div style="display: grid; grid-template-columns: 44px 112px 320px 70px 250px minmax(0, 1fr); gap: 14px; padding: 12px 20px; background: #17232B; color: #FFFFFF; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 17px; letter-spacing: 0.08em; text-transform: uppercase">
+<div>Wk</div><div>Dates</div><div>Saturday</div><div>Pack</div><div>Sunday</div><div>Notes</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 44px 112px 320px 70px 250px minmax(0, 1fr); gap: 14px; padding: 14px 20px; border-bottom: 1px solid #DDE2E0; align-items: start">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.1"><a href="week1.html" style="text-decoration:none">1</a></div>
+<div>Oct 19 – 25</div>
+<div style="display: flex; flex-direction: column; gap: 2px"><a href="https://www.alltrails.com/trail/us/tennessee/charlies-bunion-via-appalachian-trail" style="font-weight: 600">Charlies Bunion, Smokies</a><div style="font-size: 15px; color: #45535C">8 mi · 1,600 ft · from Newfound Gap</div></div>
+<div>Daypack</div>
+<div style="display: flex; flex-direction: column; gap: 2px"><div style="font-weight: 600">Andrews Bald</div><div style="font-size: 15px; color: #45535C">4 mi · from Kuwohi lot</div></div>
+<div style="font-size: 15px; color: #45535C">NC trip · Oct 23 lesson skipped</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 44px 112px 320px 70px 250px minmax(0, 1fr); gap: 14px; padding: 14px 20px; border-bottom: 1px solid #DDE2E0; align-items: start">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.1"><a href="week2.html" style="text-decoration:none">2</a></div>
+<div>Oct 26 – Nov 1</div>
+<div style="display: flex; flex-direction: column; gap: 2px"><a href="https://www.alltrails.com/trail/us/california/el-moro-canyon-short-loop-trail" style="font-weight: 600">Crystal Cove: Moro Ridge loop</a><div style="font-size: 15px; color: #45535C">5.5 mi · 820 ft · up the East Cut Across</div></div>
+<div>11 lb</div>
+<div style="display: flex; flex-direction: column; gap: 2px"><div style="font-weight: 600">Red Rock Canyon, Whiting</div><div style="font-size: 15px; color: #45535C">4.2 mi · 470 ft · no pack</div></div>
+<div style="font-size: 15px; color: #45535C">Dial in pack fit</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 44px 112px 320px 70px 250px minmax(0, 1fr); gap: 14px; padding: 14px 20px; border-bottom: 1px solid #DDE2E0; align-items: start">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.1"><a href="week3.html" style="text-decoration:none">3</a></div>
+<div>Nov 2 – 8</div>
+<div style="display: flex; flex-direction: column; gap: 2px"><a href="https://www.alltrails.com/trail/us/california/dreaded-hill-loop-trail" style="font-weight: 600">Dreaded Hill Loop, Whiting</a><div style="font-size: 15px; color: #45535C">6.1 mi · 1,230 ft · counter-clockwise</div></div>
+<div>12 lb</div>
+<div style="display: flex; flex-direction: column; gap: 2px"><div style="font-weight: 600">Red Rock Canyon, Whiting</div><div style="font-size: 15px; color: #45535C">4.2 mi · 470 ft · no pack</div></div>
+<div style="font-size: 15px; color: #45535C">Lesson Fri Nov 6</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 44px 112px 320px 70px 250px minmax(0, 1fr); gap: 14px; padding: 14px 20px; border-bottom: 1px solid #DDE2E0; align-items: start">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.1"><a href="week4.html" style="text-decoration:none">4</a></div>
+<div>Nov 9 – 15</div>
+<div style="display: flex; flex-direction: column; gap: 2px"><a href="https://www.alltrails.com/trail/us/california/chiquito-trail-to-chiquito-falls" style="font-weight: 600">Chiquito Falls, Ortega Hwy</a><div style="font-size: 15px; color: #45535C">8.6 mi · 1,400 ft · rocky, exposed ridge</div></div>
+<div>13 lb</div>
+<div style="display: flex; flex-direction: column; gap: 2px"><a href="https://www.alltrails.com/trail/us/california/peters-canyon-loop-trail" style="font-weight: 600">Peters Canyon Loop</a><div style="font-size: 15px; color: #45535C">5.9 mi · 650 ft · 8 lb</div></div>
+<div style="font-size: 15px; color: #45535C">Adventure Pass · check trail status</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 44px 112px 320px 70px 250px minmax(0, 1fr); gap: 14px; padding: 14px 20px; border-bottom: 1px solid #DDE2E0; align-items: start; background: #E6EFF2">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.1"><a href="week5.html" style="text-decoration:none">5</a></div>
+<div>Nov 16 – 22</div>
+<div style="display: flex; flex-direction: column; gap: 2px"><a href="https://www.alltrails.com/trail/us/california/el-moro-canyon-short-loop-trail" style="font-weight: 600">Crystal Cove: Moro Ridge loop</a><div style="font-size: 15px; color: #45535C">5.5 mi · 820 ft</div></div>
+<div>13 lb</div>
+<div style="display: flex; flex-direction: column; gap: 2px"><div style="font-weight: 600">Red Rock Canyon, Whiting</div><div style="font-size: 15px; color: #45535C">4.2 mi · 470 ft · no pack</div></div>
+<div style="font-size: 15px; color: #17232B"><strong>Recovery week</strong> · Lesson Fri Nov 20</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 44px 112px 320px 70px 250px minmax(0, 1fr); gap: 14px; padding: 14px 20px; border-bottom: 1px solid #DDE2E0; align-items: start">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.1"><a href="week6.html" style="text-decoration:none">6</a></div>
+<div>Nov 23 – 29</div>
+<div style="display: flex; flex-direction: column; gap: 2px"><a href="https://socalhiker.net/hikes/whiting-ranch-dreaded-hill-red-rock-canyon/" style="font-weight: 600">Dreaded Hill + Vista Lookout, Whiting</a><div style="font-size: 15px; color: #45535C">≈8 mi · ≈2,000 ft · skip the Red Rock spur</div></div>
+<div>15 lb</div>
+<div style="display: flex; flex-direction: column; gap: 2px"><a href="https://www.alltrails.com/trail/us/california/peters-canyon-loop-trail" style="font-weight: 600">Peters Canyon Loop</a><div style="font-size: 15px; color: #45535C">5.9 mi · 650 ft · 10 lb</div></div>
+<div style="font-size: 15px; color: #45535C">Thanksgiving Thu — yoga optional</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 44px 112px 320px 70px 250px minmax(0, 1fr); gap: 14px; padding: 14px 20px; border-bottom: 1px solid #DDE2E0; align-items: start; background: #F7E6DA">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.1"><a href="week7.html" style="text-decoration:none">7</a></div>
+<div>Nov 30 – Dec 6</div>
+<div style="display: flex; flex-direction: column; gap: 2px"><a href="https://www.alltrails.com/trail/us/california/sitton-peak-truck-trail" style="font-weight: 600">Sitton Peak, Ortega Hwy</a><div style="font-size: 15px; color: #45535C">10.4 mi · 2,140 ft · steep last half-mile</div></div>
+<div>16 lb</div>
+<div style="display: flex; flex-direction: column; gap: 2px"><a href="https://www.alltrails.com/trail/us/california/dreaded-hill-loop-trail" style="font-weight: 600">Dreaded Hill Loop, Whiting</a><div style="font-size: 15px; color: #45535C">6.1 mi · 1,230 ft · 12 lb</div></div>
+<div style="font-size: 15px; color: #17232B"><strong>Peak weekend</strong> · Lesson Fri Dec 4</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 44px 112px 320px 70px 250px minmax(0, 1fr); gap: 14px; padding: 14px 20px; align-items: start; background: #E6EFF2">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.1"><a href="week8.html" style="text-decoration:none">8</a></div>
+<div>Dec 7 – 12</div>
+<div style="display: flex; flex-direction: column; gap: 2px"><a href="https://www.alltrails.com/trail/us/california/el-moro-canyon-short-loop-trail" style="font-weight: 600">Crystal Cove: Moro Ridge loop</a><div style="font-size: 15px; color: #45535C">5.5 mi · 820 ft</div></div>
+<div>12 lb</div>
+<div style="display: flex; flex-direction: column; gap: 2px"><div style="font-weight: 600">Rest</div><div style="font-size: 15px; color: #45535C">Pack for the trip</div></div>
+<div style="font-size: 15px; color: #17232B"><strong>Taper</strong> · light Wed weights · travel Dec 13</div>
+</div>
+
+</div></div>
+</div>
+
+<div class="three-col" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
+
+<div style="background: #FFFFFF; border-radius: 6px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; text-transform: uppercase; letter-spacing: 0.06em; color: #1F5C73">Friday home strength · 15 min</h2>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div>Chair squats</div>
+<div>Low step-ups</div>
+<div>Calf raises</div>
+<div>Band rows</div>
+<div>Bird dogs</div>
+</div>
+<div style="font-size: 15px; color: #45535C">1–2 easy sets each. Stop well before fatigue — Saturday matters more.</div>
+</div>
+
+<div style="background: #FFFFFF; border-radius: 6px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; text-transform: uppercase; letter-spacing: 0.06em; color: #4E6B5C">San Francisco swap</h2>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div><a href="https://www.alltrails.com/trail/us/california/dipsea-trail-to-steep-ravine-trail-to-matt-davis-loop-trail" style="font-weight: 600">Dipsea · Steep Ravine · Matt Davis</a></div>
+<div style="font-size: 15px; color: #45535C">≈6.6 mi · ≈1,700 ft from Stinson Beach. Replaces any Saturday in weeks 3–6.</div>
+<div><a href="https://www.alltrails.com/trail/us/california/lands-end-trail" style="font-weight: 600">Lands End Trail</a></div>
+<div style="font-size: 15px; color: #45535C">Easy day or Sunday.</div>
+</div>
+</div>
+
+<div style="background: #FFFFFF; border-radius: 6px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; text-transform: uppercase; letter-spacing: 0.06em; color: #B5541C">Rules</h2>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 16px">
+<div>Tired? Shorten. Don't skip.</div>
+<div>Never make up a missed session.</div>
+<div>Descents slow and controlled — use your trek poles.</div>
+<div>OC wilderness parks close after rain: check before driving.</div>
+<div>Travel weeks: keep the weekend hikes, drop the gym.</div>
+</div>
+</div>
+
+</div>
+
+</div>
+<div class="pager"><span></span><a href="week1.html">Week 1 →</a></div>
+<footer class="site">© 2026 Wirth Adventures</footer>
 </body>
 </html>

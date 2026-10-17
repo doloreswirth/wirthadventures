@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 3 · Nov 2–8 · Wirth Adventures</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&amp;family=Barlow:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#F3F5F4;color:#17232B;font-family:'Barlow',sans-serif}
+a{color:#1F5C73}a:hover{color:#123B4A}
+header.site{position:sticky;top:0;z-index:5;background:#17232B;color:#fff;display:flex;align-items:center;gap:20px;padding:10px 24px;flex-wrap:wrap}
+header.site .brand{color:#fff;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.04em;white-space:nowrap}
+header.site nav{display:flex;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+header.site nav a{color:#C9D3D6;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:16px;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:4px;white-space:nowrap}
+header.site nav a:hover{color:#fff;background:#24343E}
+header.site nav a[aria-current]{color:#17232B;background:#F3F5F4}
+.frame{max-width:1200px;margin:0 auto;padding:48px 64px 40px}
+.pager{max-width:1200px;margin:0 auto;padding:0 64px 48px;display:flex;justify-content:space-between;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:22px}
+.pager a{text-decoration:none}
+footer.site{background:#17232B;color:#C9D3D6;text-align:center;font-size:13px;padding:16px}
+.scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.scroll-x > div{min-width:1060px}
+@media (max-width:900px){
+  .frame{padding:28px 16px 24px !important}
+  .pager{padding:0 16px 32px}
+  .frame h1{font-size:60px !important}
+  .frame > div:first-child{flex-direction:column !important;align-items:flex-start !important}
+  .frame > div:first-child > div:last-child{align-items:flex-start !important;text-align:left !important}
+  .week-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+  .three-col{grid-template-columns:1fr !important}
+  .day{grid-template-columns:1fr !important}
+  .day > div:first-child{flex-direction:row !important;align-items:baseline;gap:10px !important}
+  .day > div:first-child > div:last-child{margin-top:0 !important;padding-top:0 !important;margin-left:auto}
+}
+</style>
+</head>
+<body>
+<header class="site"><a class="brand" href="./">Wirth Adventures</a><nav><a href="./">Overview</a><a href="week1.html">Week 1</a><a href="week2.html">Week 2</a><a href="week3.html" aria-current="page">Week 3</a><a href="week4.html">Week 4</a><a href="week5.html">Week 5</a><a href="week6.html">Week 6</a><a href="week7.html">Week 7</a><a href="week8.html">Week 8</a></nav></header>
+<div class="frame" style="box-sizing: border-box; background: #F3F5F4; color: #17232B; font-family: 'Barlow', sans-serif; font-size: 17px; line-height: 1.4; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; border-bottom: 3px solid #17232B; padding-bottom: 20px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase; color: #1F5C73">W Trek Training · Lola &amp; Ben</div>
+<h1 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 88px; line-height: 0.95">Week 3</h1>
+<div style="font-size: 21px; font-weight: 600">Meet Dreaded Hill · three sets</div>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 10px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 36px">Nov 2 – 8</div>
+<div style="display: flex; gap: 28px">
+<div style="display: flex; flex-direction: column; align-items: flex-end"><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: #45535C">Saturday</div><div style="font-weight: 600">6.1 mi · 1,230 ft</div></div>
+<div style="display: flex; flex-direction: column; align-items: flex-end"><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: #45535C">Pack</div><div style="font-weight: 600">12 lb</div></div>
+<div style="display: flex; flex-direction: column; align-items: flex-end"><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: #45535C">Sunday</div><div style="font-weight: 600">4.2 mi · no pack</div></div>
+</div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+
+<div class="day" style="background: #FFFFFF; border-radius: 6px; overflow: hidden; display: grid; grid-template-columns: 140px minmax(0, 1fr) 300px; min-height: 196px">
+<div style="background: #66737A; color: #FFFFFF; padding: 16px 18px; display: flex; flex-direction: column; gap: 2px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.1em">MON</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 52px; line-height: 1">2</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.1em">NOV</div>
+<div style="margin-top: auto; padding-top: 12px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase">Rest</div>
+</div>
+<div style="padding: 16px 22px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-weight: 600; font-size: 19px; line-height: 1.3">Rest. A third set starts this week.</div>
+<div style="display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 6px 12px; font-size: 16px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: #1F5C73; padding-top: 1px">Lola</div>
+<div>Rest. Walk or stretch if you like.</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A3F12; padding-top: 1px">Ben</div>
+<div>Rest.</div>
+</div>
+
+</div>
+<div style="padding: 16px 22px; background: #EAEEEC; display: flex; flex-direction: column; justify-content: center; gap: 6px">
+<div style="font-style: italic; font-size: 17px; line-height: 1.35">“La práctica hace al maestro.”</div>
+<div style="font-size: 15px; color: #45535C">Practice makes the master.</div>
+<div style="font-size: 14px; font-weight: 600; color: #45535C">— Dicho</div>
+</div>
+</div>
+
+
+<div class="day" style="background: #FFFFFF; border-radius: 6px; overflow: hidden; display: grid; grid-template-columns: 140px minmax(0, 1fr) 300px; min-height: 196px">
+<div style="background: #4E6B5C; color: #FFFFFF; padding: 16px 18px; display: flex; flex-direction: column; gap: 2px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.1em">TUE</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 52px; line-height: 1">3</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.1em">NOV</div>
+<div style="margin-top: auto; padding-top: 12px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase">Tennis · Gym</div>
+</div>
+<div style="padding: 16px 22px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-weight: 600; font-size: 19px; line-height: 1.3">Three sets now — keep the same weight.</div>
+<div style="display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 6px 12px; font-size: 16px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: #1F5C73; padding-top: 1px">Lola</div>
+<div>Tennis, evening.</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A3F12; padding-top: 1px">Ben</div>
+<div>Gym, 45 min, while Lola plays: goblet squats, step-ups, Romanian deadlifts, rows, split squats, calf raises, plank. 3 sets of 10.</div>
+</div>
+
+</div>
+<div style="padding: 16px 22px; background: #EAEEEC; display: flex; flex-direction: column; justify-content: center; gap: 6px">
+<div style="font-style: italic; font-size: 17px; line-height: 1.35">“The best way out is always through.”</div>
+
+<div style="font-size: 14px; font-weight: 600; color: #45535C">— Robert Frost</div>
+</div>
+</div>
+
+
+<div class="day" style="background: #FFFFFF; border-radius: 6px; overflow: hidden; display: grid; grid-template-columns: 140px minmax(0, 1fr) 300px; min-height: 196px">
+<div style="background: #1F5C73; color: #FFFFFF; padding: 16px 18px; display: flex; flex-direction: column; gap: 2px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.1em">WED</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 52px; line-height: 1">4</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.1em">NOV</div>
+<div style="margin-top: auto; padding-top: 12px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase">Weights</div>
+</div>
+<div style="padding: 16px 22px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-weight: 600; font-size: 19px; line-height: 1.3">Three sets. Lower slowly on squats and step-ups — that’s your downhill strength.</div>
+<div style="display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 6px 12px; font-size: 16px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: #1F5C73; padding-top: 1px">Lola</div>
+<div>Weights, 7 a.m., 45 min: goblet squats, step-ups, Romanian deadlifts, rows, split squats, calf raises, plank. 3 sets of 10.</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A3F12; padding-top: 1px">Ben</div>
+<div>Rest, or a 20-min walk after work.</div>
+</div>
+
+</div>
+<div style="padding: 16px 22px; background: #EAEEEC; display: flex; flex-direction: column; justify-content: center; gap: 6px">
+<div style="font-style: italic; font-size: 17px; line-height: 1.35">“Despacito y buena letra.”</div>
+<div style="font-size: 15px; color: #45535C">Slowly, and with neat handwriting.</div>
+<div style="font-size: 14px; font-weight: 600; color: #45535C">— Dicho</div>
+</div>
+</div>
+
+
+<div class="day" style="background: #FFFFFF; border-radius: 6px; overflow: hidden; display: grid; grid-template-columns: 140px minmax(0, 1fr) 300px; min-height: 196px">
+<div style="background: #6A5D8F; color: #FFFFFF; padding: 16px 18px; display: flex; flex-direction: column; gap: 2px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.1em">THU</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 52px; line-height: 1">5</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.1em">NOV</div>
+<div style="margin-top: auto; padding-top: 12px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase">Yoga · Circuit</div>
+</div>
+<div style="padding: 16px 22px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-weight: 600; font-size: 19px; line-height: 1.3">Stretch out the extra volume.</div>
+<div style="display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 6px 12px; font-size: 16px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: #1F5C73; padding-top: 1px">Lola</div>
+<div>Yoga, 7 p.m., gentle.</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A3F12; padding-top: 1px">Ben</div>
+<div>Home circuit, 30 min, during yoga: pack step-ups, walking lunges, single-leg deadlifts, side planks. 3 rounds, then 10 min stretching.</div>
+</div>
+
+</div>
+<div style="padding: 16px 22px; background: #EAEEEC; display: flex; flex-direction: column; justify-content: center; gap: 6px">
+<div style="font-style: italic; font-size: 17px; line-height: 1.35">“First say to yourself what you would be; and then do what you have to do.”</div>
+
+<div style="font-size: 14px; font-weight: 600; color: #45535C">— Epictetus</div>
+</div>
+</div>
+
+
+<div class="day" style="background: #FFFFFF; border-radius: 6px; overflow: hidden; display: grid; grid-template-columns: 140px minmax(0, 1fr) 300px; min-height: 196px">
+<div style="background: #4E6B5C; color: #FFFFFF; padding: 16px 18px; display: flex; flex-direction: column; gap: 2px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.1em">FRI</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 52px; line-height: 1">6</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.1em">NOV</div>
+<div style="margin-top: auto; padding-top: 12px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase">Lesson</div>
+</div>
+<div style="padding: 16px 22px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-weight: 600; font-size: 19px; line-height: 1.3">Lesson only. Save the legs for Dreaded Hill. Pack to 12 lb.</div>
+<div style="display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 6px 12px; font-size: 16px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: #1F5C73; padding-top: 1px">Lola</div>
+<div>Tennis lesson. No strength, no hike.</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A3F12; padding-top: 1px">Ben</div>
+<div>30-min walk after work, wearing the pack at 12 lb.</div>
+</div>
+
+</div>
+<div style="padding: 16px 22px; background: #EAEEEC; display: flex; flex-direction: column; justify-content: center; gap: 6px">
+<div style="font-style: italic; font-size: 17px; line-height: 1.35">“Hoy por ti, mañana por mí.”</div>
+<div style="font-size: 15px; color: #45535C">Today for you, tomorrow for me.</div>
+<div style="font-size: 14px; font-weight: 600; color: #45535C">— Dicho</div>
+</div>
+</div>
+
+
+<div class="day" style="background: #FFFFFF; border-radius: 6px; overflow: hidden; display: grid; grid-template-columns: 140px minmax(0, 1fr) 300px; min-height: 196px">
+<div style="background: #B5541C; color: #FFFFFF; padding: 16px 18px; display: flex; flex-direction: column; gap: 2px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.1em">SAT</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 52px; line-height: 1">7</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.1em">NOV</div>
+<div style="margin-top: auto; padding-top: 12px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase">Main hike</div>
+</div>
+<div style="padding: 16px 22px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-weight: 600; font-size: 19px; line-height: 1.3">Meet Dreaded Hill: steady pace up, short steps down.</div>
+<div style="display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 6px 12px; font-size: 16px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: #1F5C73; padding-top: 1px">Lola</div>
+<div>Dreaded Hill Loop, Whiting Ranch: 6.1 mi, 1,230 ft, counter-clockwise. Pack 12 lb.</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A3F12; padding-top: 1px">Ben</div>
+<div>Same hike, same pack.</div>
+</div>
+<a href="https://www.alltrails.com/trail/us/california/dreaded-hill-loop-trail" style="font-size: 15px; font-weight: 600">Trail map ↗</a>
+</div>
+<div style="padding: 16px 22px; background: #EAEEEC; display: flex; flex-direction: column; justify-content: center; gap: 6px">
+<div style="font-style: italic; font-size: 17px; line-height: 1.35">“It is not because things are difficult that we do not dare; it is because we do not dare that they are difficult.”</div>
+
+<div style="font-size: 14px; font-weight: 600; color: #45535C">— Seneca</div>
+</div>
+</div>
+
+
+<div class="day" style="background: #FFFFFF; border-radius: 6px; overflow: hidden; display: grid; grid-template-columns: 140px minmax(0, 1fr) 300px; min-height: 196px">
+<div style="background: #B5541C; color: #FFFFFF; padding: 16px 18px; display: flex; flex-direction: column; gap: 2px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.1em">SUN</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 52px; line-height: 1">8</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.1em">NOV</div>
+<div style="margin-top: auto; padding-top: 12px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase">2nd hike</div>
+</div>
+<div style="padding: 16px 22px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-weight: 600; font-size: 19px; line-height: 1.3">Shake out the legs.</div>
+<div style="display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 6px 12px; font-size: 16px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: #1F5C73; padding-top: 1px">Lola</div>
+<div>Red Rock Canyon, Whiting Ranch: 4.2 mi, 470 ft. No pack.</div>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A3F12; padding-top: 1px">Ben</div>
+<div>Same hike.</div>
+</div>
+
+</div>
+<div style="padding: 16px 22px; background: #EAEEEC; display: flex; flex-direction: column; justify-content: center; gap: 6px">
+<div style="font-style: italic; font-size: 17px; line-height: 1.35">“Mens sana in corpore sano.”</div>
+<div style="font-size: 15px; color: #45535C">A sound mind in a sound body.</div>
+<div style="font-size: 14px; font-weight: 600; color: #45535C">— Juvenal</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="pager"><a href="week2.html">← Week 2</a><a href="week4.html">Week 4 →</a></div>
+<footer class="site">© 2026 Wirth Adventures</footer>
+</body>
+</html>
